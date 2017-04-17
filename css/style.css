@@ -103,7 +103,7 @@ html {
 .fizz-buzz-clock .fizz-buzz-clock-time-block > div {
   position: absolute;
   top: 50%;
-  transform: translateY(-55%);
+  transform: translateY(-53%);
   width: 100%;
   text-align: center;
 }
