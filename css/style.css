@@ -1,0 +1,124 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, main,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: inherit;
+  font-style: normal;
+  font-weight: normal;
+  vertical-align: baseline;
+}
+
+main, article, aside, details, figcaption, figure, footer, header, menu, nav, section {display: block;}
+html{
+  overflow-x:hidden;overflow-y:hidden;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  font-size: 62.5%;
+}
+
+*, *:before, *:after {box-sizing: border-box;}
+blockquote, q {quotes: none;}
+a{text-decoration: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: none;}
+input, textarea {margin: 0; padding: 0;}
+input::-webkit-input-placeholder, input:-moz-placeholder, textarea::-webkit-input-placeholder, textarea:-moz-placeholder {color: #888;}
+input[type="button"], input[type="submit"], input[type="search"], input[type="reset"] {-webkit-appearance: none;}
+ol, ul{list-style: none;list-style-type: none;}
+input[type="submit"]{cursor: pointer;}
+table{border-collapse: collapse; border-spacing: 0;width: 100%;}
+caption, th{text-align: left;}
+a:focus {outline:none;}
+.clearfix:before, .clearfix:after{content:"";display: table;}
+.clearfix:after{clear:both;}
+.clearfix{*zoom:1;}
+img {max-width:100%; vertical-align: bottom;}
+
+html {
+  font-size: 62.5%;
+  overflow-y: hidden;
+}
+
+.fizz-buzz-clock-bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background: url(https://unsplash.it/1500/?random) center center #000000;
+  background-size: cover;
+}
+
+.fizz-buzz-clock-bg::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  background: rgba(0, 0, 0, 0.5);
+  background-size: cover;
+}
+
+.fizz-buzz-clock {
+  position: relative;
+  z-index: 1;
+  min-width: 1080px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Lato', sans-serif;
+  font-size: 22rem;
+  color: #FFFFFF;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.fizz-buzz-clock .fizz-buzz-clock-time-block {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  min-width: 300px;
+  height: 100%;
+}
+
+.fizz-buzz-clock .fizz-buzz-clock-time-block > div {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-55%);
+  width: 100%;
+  text-align: center;
+}
+
+.fizz-buzz-clock span {
+  display: inline-block;
+  margin: 0 -40px;
+  vertical-align: baseline;
+}
+
+.fizz-buzz-clock .fizz,
+.fizz-buzz-clock .buzz {
+  line-height: 0.65;
+}
+
+.fizz-buzz-clock .fizz-buzz .buzz {
+  margin: 50px 0 0;
+}
