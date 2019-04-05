@@ -1,0 +1,18 @@
+{
+  "name": "fizz-buzz-clock",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/c-r-a-f/fizz-buzz-clock.git",
+  "author": "CRAF <craf.post@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "date-fns": "^1.30.1",
+    "hyperapp": "^1.2.9",
+    "parcel-bundler": "^1.12.3"
+  },
+  "devDependencies": {
+    "typescript": "^3.4.1"
+  }
+}
