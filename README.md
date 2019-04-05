@@ -8,6 +8,3 @@ this watch will display "Fizz".
 Also, if you can divide by 5, "Buzz". 
 And if it is divisible by 15 it will display "Fizz Buzz".
 
-Please access the Link below and enjoy.
-
-[Fizz Buzz Clock](https://c-r-a-f.github.io/fizz-buzz-clock/ "Fizz Buzz Clock")
