@@ -1,42 +1,33 @@
-class FizzBuzzClock {
-  constructor(currentDate){
-    this.currentDate = currentDate;
-    this.currentTime = {};
-    this.currentTime.hour = this.fizzBuzzify(this.currentDate.getHours());
-    this.currentTime.minute = this.fizzBuzzify(this.currentDate.getMinutes());
-    this.currentTime.second = this.fizzBuzzify(this.currentDate.getSeconds());
-  }
 
-  doZeroPadding(number) {
-    if(!isFinite(number)){
-      return number;
-    }
-    
-    return (Array(2).join('0') + number).slice(-2);
-  }
+const FIZZ_ELEMENT = '<div class="fizz">Fi<br>zz</div>';
+const BUZZ_ELEMENT = '<div class="buzz">Bu<br>zz</div>';
+const FIZZ_BUZZ_ELEMENT = `<div class="fizz-buzz">${FIZZ_ELEMENT}${BUZZ_ELEMENT}</div>`;
 
-  fizzBuzzify(number) {
-    if(number === 0){
-      return this.doZeroPadding(number);
-    }
-    
-    let fizzElement = '<div class="fizz">Fi<br>zz</div>';
-    let buzzElement = '<div class="buzz">Bu<br>zz</div>';
-    let fizzBuzzElement = `<div class="fizz-buzz">${fizzElement}${buzzElement}</div>`;
-    let fizz = number % 3 ? false : fizzElement;
-    let fizzBuzzedNumber =  number % 5 ? fizz || number : fizz ? fizzBuzzElement: buzzElement;
-    
-    return this.doZeroPadding(fizzBuzzedNumber);
-  }
+const HOUR_ELEMENT = document.querySelector('#jsi-fizz-buzz-clock-hour');
+const MINUTE_ELEMENT = document.querySelector('#jsi-fizz-buzz-clock-minute');
+const SECOND_ELEMENT = document.querySelector('#jsi-fizz-buzz-clock-second');
 
-  tick() {
-    document.getElementById("jsi-fizz-buzz-clock-hour").innerHTML = this.currentTime.hour;
-    document.getElementById("jsi-fizz-buzz-clock-minute").innerHTML = this.currentTime.minute;
-    document.getElementById("jsi-fizz-buzz-clock-second").innerHTML = this.currentTime.second;
+const isFizz = (number) => !(number % 3);
+const isBuzz = (number) => !(number % 5);
+const isFizzBuzz = (number) => isFizz(number) && isBuzz(number);
+
+function fizzBuzzify(number) {
+  if(isFizzBuzz(number)) {
+    return FIZZ_BUZZ_ELEMENT;
+  } else if(isFizz(number)) {
+    return FIZZ_ELEMENT;
+  } else if(isBuzz(number)) {
+    return BUZZ_ELEMENT;
+  } else {
+    return String(number).padStart(2, '0');
   }
 }
 
-setInterval(() => {
-  let fizzBuzzClock = new FizzBuzzClock(new Date());
-  fizzBuzzClock.tick();
-},1000);
+function tick() {
+  const currentDate = new Date();
+  HOUR_ELEMENT.innerHTML = fizzBuzzify(currentDate.getHours());
+  MINUTE_ELEMENT.innerHTML = fizzBuzzify(currentDate.getMinutes());
+  SECOND_ELEMENT.innerHTML = fizzBuzzify(currentDate.getSeconds());
+}
+
+setInterval(tick, 1000);
