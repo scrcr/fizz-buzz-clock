@@ -24,7 +24,6 @@ html {
   left: 0;
   display: block;
   background: rgba(0, 0, 0, 0.5);
-  background-size: cover;
 }
 
 .fizz-buzz-clock {
@@ -39,14 +38,14 @@ html {
   padding: 0;
   overflow: hidden;
   font-family: 'Lato', sans-serif;
-  font-size: 22rem;
+  font-size: 17rem;
   color: #FFFFFF;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
   text-align: center;
 }
 
 .fizz-buzz-clock > div {
-  width: 30%;
+  width: 21%;
   text-align: center;
 }
 
@@ -59,7 +58,7 @@ html {
 
 .fizz-buzz-clock .fizz,
 .fizz-buzz-clock .buzz {
-  line-height: 0.65;
+  line-height: 0.75;
 }
 
 .fizz-buzz-clock .fizz-buzz .buzz {
