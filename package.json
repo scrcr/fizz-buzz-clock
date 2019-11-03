@@ -6,13 +6,13 @@
   "author": "CRAF <craf.post@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/preset-env": "^7.6.3",
-    "date-fns": "^1.30.1",
+    "date-fns": "^2.6.0",
     "hyperapp": "^2.0.3",
-    "parcel-bundler": "^1.12.4"
+    "typescript": "^3.6.4"
   },
   "devDependencies": {
-    "typescript": "^3.6.4"
+    "parcel-bundler": "^1.12.4",
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3"
   }
 }
