@@ -6,8 +6,8 @@
   "author": "CRAF <craf.post@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "parcel build index.html -d docs",
-    "start": "parcel index.html -d docs"
+    "build": "parcel build index.html -d docs --public-url https://c-r-a-f.github.io/fizz-buzz-clock/",
+    "start": "parcel index.html"
   },
   "dependencies": {
     "@hyperapp/time": "^0.0.10",
