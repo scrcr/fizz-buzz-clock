@@ -5,15 +5,15 @@
   "repository": "https://github.com/c-r-a-f/fizz-buzz-clock.git",
   "author": "CRAF <craf.post@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "parcel build index.html -d docs",
+    "start": "parcel index.html -d docs"
+  },
   "dependencies": {
     "@hyperapp/time": "^0.0.10",
-    "date-fns": "^2.6.0",
-    "hyperapp": "^2.0.3",
-    "vue": "^2.6.10"
+    "hyperapp": "^2.0.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/preset-env": "^7.6.3",
     "parcel-bundler": "^1.12.4"
   }
 }
