@@ -1,2 +1,78 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, user-scalable=no"><meta name="apple-mobile-web-app-capable" content="yes"><link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet"><title>FizzBuzzClock</title><link rel="stylesheet" href="https://c-r-a-f.github.io/fizz-buzz-clock/style.a642cff9.css"></head><body> <div id="app"></div> <script src="https://c-r-a-f.github.io/fizz-buzz-clock/js.66c2d9bf.js" async></script>
-</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fizz-Buzz Clock</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Oswald", sans-serif;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+    }
+    .clock {
+      font-size: 8rem;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      position: fixed;
+    }
+    .timePart {
+      width: 3.5ch; /* Reserve space for the string "FizzBuzz" */
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body x-data="clockApp()" x-init="init()">
+  <div class="clock">
+    <div class="timePart" x-html="fizzBuzz(hours)"></div>:
+    <div class="timePart" x-html="fizzBuzz(minutes)"></div>:
+    <div class="timePart" x-html="fizzBuzz(seconds)"></div>
+  </div>
+
+  <script>
+    function clockApp() {
+      return {
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+        fizzBuzz(num) {
+          if (num % 15 === 0) return 'Fizz<br>Buzz';
+          if (num % 3 === 0) return 'Fizz';
+          if (num % 5 === 0) return 'Buzz';
+          return String(num).padStart(2, '0');
+        },
+        updateClock() {
+          const now = new Date();
+          this.hours = now.getHours();
+          this.minutes = now.getMinutes();
+          this.seconds = now.getSeconds();
+        },
+        init() {
+          fetch('https://picsum.photos/1920/1280')
+            .then(response => {
+              document.body.style.backgroundImage = `url(${response.url})`;
+            });
+
+          this.updateClock();
+          setInterval(() => this.updateClock(), 1000);
+        }
+      }
+    }
+  </script>
+</body>
+</html>
